@@ -1,0 +1,64 @@
+* {
+    text-align: center;
+}
+
+table {
+    min-width: 600px;
+    max-width: 1500px;
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+}
+
+.days {
+    background-color: hsl(0, 50%, 75%);
+}
+
+td, th {
+    position: relative;
+}
+
+tr:hover {
+    background-color: gold;
+}
+
+td:hover::after,
+th:hover::after {
+  content: '';  
+  height: 10000px;
+  left: 0;
+  position: absolute;  
+  top: -5000px;
+  width: 100%;
+  z-index: -1;
+  background-color: gold;
+}
+
+tbody tr:nth-child(odd) .row::before {
+    content: " ";
+    background-color: hsl(0, 50%, 50%);
+    position: absolute;
+    width: 10000px;
+    height: 100%;
+    z-index: -5;
+    top: 0;
+    left: 0;
+}
+
+tbody tr:nth-child(even) .row::before {
+    content: " ";
+    background-color: hsl(0, 50%, 75%);
+    position: absolute;
+    width: 10000px;
+    height: 100%;
+    z-index: -5;
+    top: 0;
+    left: 0;
+}
+
+table caption {
+    font-size: 2rem;
+    color: hsl(0, 50%, 50%);
+    z-index: +1;
+    background-color: hsl(0, 50%, 25%);
+}
